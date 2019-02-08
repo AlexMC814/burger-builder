@@ -5,6 +5,11 @@
   text-align: center;
   font-weight: bold;
   font-size: 1.2rem;
+
+  .no-ingredients {
+    font-weight: normal;
+    font-style: italic;
+  }
 }
 
 @media screen and (min-width: 500px) and (min-height: 400px) {
