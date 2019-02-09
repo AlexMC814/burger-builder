@@ -18,9 +18,9 @@
     "extends": "react-app"
   },
   "browserslist": [
-    ">0.2%",
+    ">1%",
     "not dead",
-    "not ie <= 11",
+    "not ie <= 10",
     "not op_mini all"
   ]
 }

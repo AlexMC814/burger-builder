@@ -1,14 +1,15 @@
 import React from 'react';
 
 import './Burger.scss';
+
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
 const Burger = props => {
   let transformedIngredients = Object.keys(props.ingredients)
     .map(ingName => {
-      console.log('Ingredient name:', ingName);
+      // console.log('Ingredient name:', ingName);
       return [...Array(props.ingredients[ingName])].map((_, i) => {
-        console.log('Igredient value index:', ingName + ' ' + i);
+        // console.log('Igredient value index:', ingName + ' ' + i);
         return <BurgerIngredient key={ingName + i} type={ingName} />;
       });
     })

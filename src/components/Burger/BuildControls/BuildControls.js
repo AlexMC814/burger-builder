@@ -3,15 +3,16 @@ import './BuildControls.scss';
 import BuildControl from './BuildControl/BuildControl';
 
 const controls = [
-  { label: 'Salad', type: 'salad' },
-  { label: 'Bacon', type: 'bacon' },
-  { label: 'Cheese', type: 'cheese' },
-  { label: 'Meat', type: 'meat' },
+  { label: 'Салат', type: 'salad' },
+  { label: 'Бекон', type: 'bacon' },
+  { label: 'Сыр', type: 'cheese' },
+  { label: 'Мясо', type: 'meat' },
 ];
 
 const BuildControls = props => {
   return (
     <div className='build-controls'>
+      <h3>Бургер Конструктор</h3>
       {controls.map(ctrl => {
         return (
           <BuildControl
@@ -23,6 +24,12 @@ const BuildControls = props => {
           />
         );
       })}
+      <button
+        className='order-btn'
+        disabled={!props.purchasable}
+        onClick={props.ordered}>
+        ЗАКАЗАТЬ
+      </button>
     </div>
   );
 };

@@ -1,3 +1,21 @@
+.wrapper {
+  display: grid;
+  grid-template:
+    'toolbar toolbar toolbar'
+    'content content content'
+    'footer footer footer' / 1fr 1fr 200px;
+  min-height: 100vh;
+}
+
+.toolbar {
+  grid-area: toolbar;
+}
+
 .content {
-  margin-top: 16px;
+  margin-top: 72px;
+  grid-area: content;
+}
+
+.footer {
+  grid-area: footer;
 }

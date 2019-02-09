@@ -2,12 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 60%;
   margin: 5px 0;
 
   &__label {
     padding: 10px;
     font-weight: bold;
-    width: 80%;
+    width: 30%;
   }
 
   .build-control__btn {
@@ -16,19 +17,26 @@
     padding: 5px;
     margin: 0 5px;
     border: 1px solid #aa6817;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
     cursor: pointer;
     outline: none;
     color: white;
     width: 60px;
-    height: 40px;
+    transition: all 0.2s ease-in-out;
+
+    &:active,
+    &:visited {
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    }
 
     &.plus,
     &.minus {
-      background-color: #daa972;
+      font-size: 1.5rem;
+      background-color: #2d7b2e;
       transition: all 0.3s ease-in;
       &:hover {
-        background-color: darken(#daa972, 10%);
+        background-color: lighten(#2d7b2e, 10%);
       }
     }
   }

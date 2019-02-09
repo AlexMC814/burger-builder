@@ -1,0 +1,16 @@
+.checkout {
+  font-style: italic;
+  text-align: center;
+
+  h2 {
+    font-weight: normal;
+    font-style: inherit;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  &__list-container {
+    width: 200px;
+    margin: 0 auto;
+  }
+}

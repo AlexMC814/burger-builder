@@ -1,0 +1,23 @@
+.burger-constructor {
+  display: grid;
+  grid-template: 'controls ingredients checkout' / 25% 1fr 30%;
+
+  &__ingredients {
+    grid-area: ingredients;
+    align-items: center;
+  }
+
+  &__checkout {
+    grid-area: checkout;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+
+  &__controls {
+    grid-area: controls;
+  }
+}

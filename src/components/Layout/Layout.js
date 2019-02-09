@@ -1,12 +1,14 @@
 import React from 'react';
 import './Layout.scss';
+import Toolbar from '../Navigation/Toolbar/Toolbar';
 
 const Layout = props => {
   return (
-    <React.Fragment>
-      <div>Toolbar, Sidebar, Backdrop</div>
+    <div className='wrapper'>
+      <Toolbar />
       <main className='content'>{props.children}</main>
-    </React.Fragment>
+      <footer className='footer'>Footer</footer>
+    </div>
   );
 };
 
