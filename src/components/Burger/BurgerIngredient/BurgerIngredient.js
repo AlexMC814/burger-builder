@@ -20,16 +20,16 @@ class BurgerIngredient extends Component {
       case 'bread-bottom':
         ingredient = <div className='bread__bottom' />;
         break;
-      case 'meat':
+      case 'Мясо':
         ingredient = <div className='meat' />;
         break;
-      case 'salad':
+      case 'Салат':
         ingredient = <div className='salad' />;
         break;
-      case 'cheese':
+      case 'Сыр':
         ingredient = <div className='cheese' />;
         break;
-      case 'bacon':
+      case 'Бекон':
         ingredient = <div className='bacon' />;
         break;
       default:

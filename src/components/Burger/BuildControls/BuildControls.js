@@ -3,10 +3,10 @@ import './BuildControls.scss';
 import BuildControl from './BuildControl/BuildControl';
 
 const controls = [
-  { label: 'Салат', type: 'salad' },
-  { label: 'Бекон', type: 'bacon' },
-  { label: 'Сыр', type: 'cheese' },
-  { label: 'Мясо', type: 'meat' },
+  { label: 'Салат', type: 'Салат' },
+  { label: 'Бекон', type: 'Бекон' },
+  { label: 'Сыр', type: 'Сыр' },
+  { label: 'Мясо', type: 'Мясо' },
 ];
 
 const BuildControls = props => {

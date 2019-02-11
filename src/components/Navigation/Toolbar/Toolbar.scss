@@ -11,7 +11,27 @@
   background-color: #2d7b2e;
   z-index: 90;
 
+  &__logo {
+    height: 80%;
+  }
+
   nav {
     height: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .toolbar {
+    nav {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .toolbar {
+    &__menu {
+      display: none;
+    }
   }
 }
