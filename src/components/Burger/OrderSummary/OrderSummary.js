@@ -16,7 +16,7 @@ const OrderSummary = props => {
           Отменить
         </Button>
         <Button btnType='success' clicked={props.confirm}>
-          Подтвердить
+          Оформить
         </Button>
       </div>
     </div>

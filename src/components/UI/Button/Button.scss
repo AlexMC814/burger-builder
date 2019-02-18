@@ -28,4 +28,9 @@
       background-color: lighten(#b61616, 15%);
     }
   }
+
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
 }

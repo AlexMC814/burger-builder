@@ -1,0 +1,32 @@
+.input {
+  width: 100%;
+  padding: 10px;
+
+  &__label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  &__element {
+    display: block;
+    width: 100%;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font: inherit;
+    padding: 6px 10px;
+    transition: all 0.3s ease-in;
+
+    &.invalid {
+      border: 2px solid red;
+      color: white;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: #ccc;
+    }
+  }
+}

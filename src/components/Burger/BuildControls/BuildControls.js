@@ -13,6 +13,7 @@ const BuildControls = props => {
   return (
     <div className='build-controls'>
       <h3>Бургер Конструктор</h3>
+      <strong>{props.price.toFixed(2)}</strong>
       {controls.map(ctrl => {
         return (
           <BuildControl
