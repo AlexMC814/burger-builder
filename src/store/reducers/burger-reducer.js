@@ -1,13 +1,9 @@
 import * as actions from '../actions/actions';
 
 const initState = {
-  ingredients: {
-    Салат: 0,
-    Сыр: 0,
-    Мясо: 0,
-    Бекон: 0,
-  },
+  ingredients: null,
   totalPrice: 60,
+  error: false,
 };
 
 const INGREDIENTS_PRICES = {
@@ -17,7 +13,7 @@ const INGREDIENTS_PRICES = {
   Бекон: 110.4,
 };
 
-const reducer = (state = initState, action) => {
+const burgerReducer = (state = initState, action) => {
   switch (action.type) {
     case actions.ADD_INGREDIENT:
       return {
@@ -39,9 +35,21 @@ const reducer = (state = initState, action) => {
         totalPrice:
           state.totalPrice - INGREDIENTS_PRICES[action.ingredientName],
       };
+    case actions.SET_INGREDIENTS:
+      return {
+        ...state,
+        ingredients: action.ingredients,
+        error: false,
+        totalPrice: 60,
+      };
+    case actions.FETCH_INGREDIENTS_FAILED:
+      return {
+        ...state,
+        error: true,
+      };
     default:
       return state;
   }
 };
 
-export default reducer;
+export default burgerReducer;

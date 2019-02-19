@@ -7,6 +7,7 @@ const NavItems = props => {
     <ul className='nav-items'>
       <NavItem link='/'>Конструктор Бургеров</NavItem>
       <NavItem link='/orders'>Мои Заказы</NavItem>
+      <NavItem link='/auth'>Регистрация</NavItem>
     </ul>
   );
 };
