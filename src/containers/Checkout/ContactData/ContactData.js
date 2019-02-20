@@ -6,6 +6,7 @@ import Spinner from '../../../components/UI/Spinner/Spinner';
 import Input from '../../../components/UI/Input/Input';
 import withErrorHandler from '../../../hoc/withErrorHandler/withErrorHandler';
 import * as orderActions from '../../../store/actions';
+import { checkValidity } from '../../../shared/utilities';
 
 import axios from '../../../axios-orders';
 
@@ -117,9 +118,10 @@ class ContactData extends Component {
       ingredients: this.props.ings,
       price: this.props.price,
       orderData: formData,
+      userId: this.props.userId,
     };
 
-    this.props.onBurgerOrdered(order);
+    this.props.onBurgerOrdered(order, this.props.token);
   };
 
   inputChangeHandler = (event, inputId) => {
@@ -128,7 +130,7 @@ class ContactData extends Component {
     };
     const updatedFormEl = { ...updatedOrderForm[inputId] };
     updatedFormEl.value = event.target.value;
-    updatedFormEl.valid = this.checkValidity(
+    updatedFormEl.valid = checkValidity(
       updatedFormEl.value,
       updatedFormEl.validation
     );
@@ -143,28 +145,6 @@ class ContactData extends Component {
       orderForm: updatedOrderForm,
       formIsValid: formIsValid,
     });
-  };
-
-  checkValidity = (value, rules) => {
-    let isValid = true;
-
-    if (!rules) {
-      return true;
-    }
-
-    if (rules.required) {
-      isValid = value.trim() !== '' && isValid;
-    }
-
-    if (rules.minLength) {
-      isValid = value.length >= rules.minLength && isValid;
-    }
-
-    if (rules.maxLength) {
-      isValid = value.length <= rules.maxLength && isValid;
-    }
-
-    return isValid;
   };
 
   render() {
@@ -214,13 +194,15 @@ const mapStateToProps = state => {
     ings: state.burger.ingredients,
     price: state.burger.totalPrice,
     loading: state.order.loading,
+    token: state.auth.token,
+    userId: state.auth.userId,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    onBurgerOrdered: orderData =>
-      dispatch(orderActions.purchaseBurger(orderData)),
+    onBurgerOrdered: (orderData, token) =>
+      dispatch(orderActions.purchaseBurger(orderData, token)),
   };
 };
 

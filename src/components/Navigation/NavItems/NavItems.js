@@ -6,8 +6,14 @@ const NavItems = props => {
   return (
     <ul className='nav-items'>
       <NavItem link='/'>Конструктор Бургеров</NavItem>
-      <NavItem link='/orders'>Мои Заказы</NavItem>
-      <NavItem link='/auth'>Регистрация</NavItem>
+      {props.isAuthenticated ? (
+        <NavItem link='/orders'>Мои Заказы</NavItem>
+      ) : null}
+      {!props.isAuthenticated ? (
+        <NavItem link='/auth'>Войти</NavItem>
+      ) : (
+        <NavItem link='/logout'>Выйти</NavItem>
+      )}
     </ul>
   );
 };

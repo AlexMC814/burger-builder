@@ -4,6 +4,7 @@ const initState = {
   ingredients: null,
   totalPrice: 60,
   error: false,
+  building: false,
 };
 
 const INGREDIENTS_PRICES = {
@@ -24,6 +25,7 @@ const burgerReducer = (state = initState, action) => {
         },
         totalPrice:
           state.totalPrice + INGREDIENTS_PRICES[action.ingredientName],
+        building: true,
       };
     case actions.REMOVE_INGREDIENT:
       return {
@@ -34,6 +36,7 @@ const burgerReducer = (state = initState, action) => {
         },
         totalPrice:
           state.totalPrice - INGREDIENTS_PRICES[action.ingredientName],
+        building: true,
       };
     case actions.SET_INGREDIENTS:
       return {
@@ -41,6 +44,7 @@ const burgerReducer = (state = initState, action) => {
         ingredients: action.ingredients,
         error: false,
         totalPrice: 60,
+        building: false,
       };
     case actions.FETCH_INGREDIENTS_FAILED:
       return {
